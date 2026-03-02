@@ -63,7 +63,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "vm-demo"
   location            = var.location
   resource_group_name = azurerm_resource_group.rg.name
-  size                = "Standard_B1s"
+  size                = "Standard_B2s"
   admin_username      = "azureuser"
   network_interface_ids = [azurerm_network_interface.nic.id]
   disable_password_authentication = true
