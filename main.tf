@@ -43,7 +43,7 @@ resource "azurerm_public_ip" "public_ip" {
   name                = "public-ip-demo"
   location            = var.location
   resource_group_name = azurerm_resource_group.rg.name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
 }
 
 resource "azurerm_network_interface" "nic" {
@@ -63,7 +63,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "vm-demo"
   location            = var.location
   resource_group_name = azurerm_resource_group.rg.name
-  size                = "Standard_B2s"
+  size                = "Standard_D2s_v3"
   admin_username      = "azureuser"
   network_interface_ids = [azurerm_network_interface.nic.id]
   disable_password_authentication = true
